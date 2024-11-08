@@ -15,10 +15,17 @@ public class ExampleSpringBootApplication {
 		SpringApplication.run(ExampleSpringBootApplication.class, args);
 	}
 
+	@GetMapping("/hello")
+	public String gethello() {
+		return new String("Hello");
+	}
+
 	@GetMapping("/")
 	public String getMethodName(@RequestParam String param) {
 		return new String("Hello world");
 	}
+
+
 	
 
 }
