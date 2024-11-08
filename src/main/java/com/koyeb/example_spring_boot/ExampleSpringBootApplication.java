@@ -16,7 +16,7 @@ public class ExampleSpringBootApplication {
 	}
 
 	@GetMapping("/")
-	public String getMethodName() {
+	public String getMethodName(@RequestParam String param) {
 		return new String("Hello world");
 	}
 	
