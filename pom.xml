@@ -8,10 +8,10 @@
 		<version>3.2.11</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>hulu</artifactId>
+	<groupId>com.koyeb</groupId>
+	<artifactId>example-spring-boot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hulu</name>
+	<name>example-spring-boot</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -32,7 +32,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>
