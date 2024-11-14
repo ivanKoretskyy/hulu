@@ -36,7 +36,7 @@ public class MovieController {
     }
 
     @GetMapping("/movie/{id}")
-    public ResponseEntity<Movie> getMethodName(@PathVariable String id) {
+    public ResponseEntity<Movie> getMethodName(@PathVariable Long id) {
         return new ResponseEntity<>(movieService.getMovie(id), HttpStatus.OK);
     }
     

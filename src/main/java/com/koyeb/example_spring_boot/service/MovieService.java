@@ -1,6 +1,7 @@
 package com.koyeb.example_spring_boot.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.IntStream;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,21 +17,22 @@ public class MovieService {
     private MovieRepository movieRepository;
 
     public void saveMovie(Movie movie){
-        movieRepository.saveMovie(movie);
+        movieRepository.save(movie);
     }
 
     public List<Movie> getMovies() {
-        return movieRepository.getMovies();
+        return (List<Movie>)movieRepository.findAll();
     }
 
-    public Movie getMovie(String id){
-        return movieRepository.getMovie(findIndexById(id));
+    public Movie getMovie(Long id){
+        Optional<Movie> movie = movieRepository.findById(id);
+        return unwrapMovie(movie, id);
     }
 
-    private int findIndexById(String id){
-        return IntStream.range(0, movieRepository.getMovies().size())
-                .filter(index -> movieRepository.getMovies().get(index).getId().equals(id))
-                .findFirst()
-                .orElseThrow();
+    static Movie unwrapMovie(Optional<Movie> entity, Long id) {
+        if(entity.isPresent()) return entity.get();
+        else throw new Error("Movie not found");
     }
+
+
 }
