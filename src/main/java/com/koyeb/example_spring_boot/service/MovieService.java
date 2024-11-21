@@ -10,8 +10,10 @@ import org.springframework.stereotype.Service;
 import com.koyeb.example_spring_boot.pojo.Movie;
 import com.koyeb.example_spring_boot.repository.MovieRepository;
 
+
 @Service
 public class MovieService {
+
     
     @Autowired
     private MovieRepository movieRepository;
