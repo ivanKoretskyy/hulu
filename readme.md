@@ -2,7 +2,7 @@
 
 + deploy
 - connect to db mongo
-- connect to sql 
++ connect to sql 
 - make two table movies and actors
 
 --------------------------------------DEPLOYMENT----------------------------------
