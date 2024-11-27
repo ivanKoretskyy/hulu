@@ -1,14 +1,27 @@
 package com.koyeb.example_spring_boot.pojo;
 
-import java.util.UUID;
+import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
+
+@NoArgsConstructor
+@RequiredArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name = "movie")
 public class Movie {
@@ -18,30 +31,15 @@ public class Movie {
     @Column(name = "id")
     private Long id;
 
+    @lombok.NonNull
     @Column(name = "title", nullable = false)
     private String title;
     // private Number rating;
     //private Number cast;
 
-    public Movie() {
-        //this.id = UUID.randomUUID().toString();
-    }
-
-    public String getTitle() {
-        return this.title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return this.id;
-    }
+    @JsonIgnore
+    @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
+    private List<Review> reviews;
 
     
 }

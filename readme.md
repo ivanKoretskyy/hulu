@@ -4,6 +4,7 @@
 - connect to db mongo
 + connect to sql 
 - make two table movies and actors
+- make env variables so local changes go to local db
 
 --------------------------------------DEPLOYMENT----------------------------------
 
