@@ -1,10 +1,13 @@
 -------------------------------------TASKS---------------------------------------
 
 + deploy
-- connect to db mongo
++ connect to db mongo
 + connect to sql 
 - make two table movies and actors
-- make env variables so local changes go to local db
++ make env variables so local changes go to local db
+- connect movies and actors
+- create simple react app to show movies
+- 
 
 --------------------------------------DEPLOYMENT----------------------------------
 
@@ -59,3 +62,9 @@ GRANT ALL ON quotes_database.* TO username@'localhost';
 https://www.phpmyadmin.co/tbl_sql.php?db=sql5746484&table=movie
 
 https://www.phpmyadmin.co/tbl_sql.php?db=sql5746484&table=movie
+
+aws
+username
+ivanKoretskyy
+Irak#911
+db name hulu
