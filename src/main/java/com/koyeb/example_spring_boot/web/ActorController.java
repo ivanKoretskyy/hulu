@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.koyeb.example_spring_boot.pojo.Actor;
+import com.koyeb.example_spring_boot.pojo.Movie;
 import com.koyeb.example_spring_boot.service.ActorService;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -35,6 +36,11 @@ public class ActorController {
         return new ResponseEntity<>(actorService.getActor(id), HttpStatus.OK);
     }
 
+    @GetMapping("/actor/{id}/movies")
+    public ResponseEntity<List<Movie>> getMovies(@PathVariable Long id) {
+        return new ResponseEntity<>(actorService.getMovies(id), HttpStatus.OK);
+    }
+
     @DeleteMapping("/actor/{id}")
     public ResponseEntity<HttpStatus> deleteActor(@PathVariable Long id) {
         actorService.deleteActor(id);
@@ -48,5 +54,7 @@ public class ActorController {
         actorService.save(entity);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
+
     
 }

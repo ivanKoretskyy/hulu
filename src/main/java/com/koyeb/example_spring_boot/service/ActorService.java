@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.koyeb.example_spring_boot.pojo.Actor;
+import com.koyeb.example_spring_boot.pojo.Movie;
 import com.koyeb.example_spring_boot.repository.ActorRepository;
 
 @Service
@@ -30,6 +31,11 @@ public class ActorService {
     public Actor getActor(Long id){
         Optional<Actor> actor = actorRepository.findById(id);
         return unwrapActor(actor, id);
+    }
+
+    public List<Movie> getMovies(Long id){
+        Actor actor = getActor(id);
+        return actor.getMovies();
     }
 
     static Actor unwrapActor(Optional<Actor> entity, Long id){

@@ -10,6 +10,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -40,6 +43,15 @@ public class Movie {
     @JsonIgnore
     @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
     private List<Review> reviews;
+
+    @JsonIgnore
+    @ManyToMany
+    @JoinTable(
+        name = "movie_actor",
+        joinColumns = @JoinColumn(name = "movie_id", referencedColumnName = "id"),
+        inverseJoinColumns = @JoinColumn(name = "actor_id", referencedColumnName = "id")
+    )
+    private List<Actor> actors;
 
     
 }

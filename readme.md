@@ -3,11 +3,14 @@
 + deploy
 + connect to db mongo
 + connect to sql 
-- make two table movies and actors
++ make two table movies and actors
 + make env variables so local changes go to local db
-- connect movies and actors
++ connect movies and actors
 - create simple react app to show movies
-- 
+- ADD DOCUMENTATION TO README FOR AMAZON MYSQL
+- add authentication
+- add exception handling that will show that no such movie or no such actor
+- change list to set
 
 --------------------------------------DEPLOYMENT----------------------------------
 
@@ -27,41 +30,6 @@ const connectionString = process.env.ATLAS_URI || "mongodb+srv://ivankoretskyy3:
 
 
 -----------------------------------------POSTGRESQL-------------------------------------------
-
-\l list of database
-CREATE DATABASE student; // create database student;
-\du list of roles
-GRANT ALL PRIVILEGES ON DATABASE hulu1 TO "ivan.koretskyy";
-\c hulu1; //connect to hulu1
-\d find reletion
-
-CREATE USER <YOUR_USERNAME> WITH PASSWORD '<YOUR_PASSWORD>'
-CREATE DATABASE <YOUR_DATABASE_NAME> OWNER <YOUR_USERNAME>;
-
-
-
--------------------------------------------MYSql----------------------------------------------------------------------
-connect to mysql in terminal 
-/usr/local/mysql/bin/mysql -u root -p
-
-CREATE DATABASE hulu;
-USE restapi;
-CREATE TABLE movie (
-  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  title VARCHAR(500) NOT NULL);
-
-INSERT INTO movie(id,title) 
-VALUES 
-(1,'The God Father');
-
-
-
-CREATE USER username@'localhost' IDENTIFIED BY 'password';
-GRANT ALL ON quotes_database.* TO username@'localhost';
-
-https://www.phpmyadmin.co/tbl_sql.php?db=sql5746484&table=movie
-
-https://www.phpmyadmin.co/tbl_sql.php?db=sql5746484&table=movie
 
 aws
 username
