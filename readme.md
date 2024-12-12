@@ -7,7 +7,7 @@
 + make env variables so local changes go to local db
 + connect movies and actors
 - create simple react app to show movies
-- ADD DOCUMENTATION TO README FOR AMAZON MYSQL
++ ADD DOCUMENTATION TO README FOR AMAZON MYSQL
 - add authentication
 - add exception handling that will show that no such movie or no such actor
 - change list to set
@@ -18,6 +18,8 @@
 deployed to kyoeb under main gmail account
 https://app.koyeb.com/services
 url https://zesty-hallie-ivankoretskyy-418f40b9.koyeb.app/
+u: gm
+p: st
 system.properties file is needed for deployment with java version
 
 -----------------------------------------DB MONGO----------------------------------
@@ -29,7 +31,11 @@ const connectionString = process.env.ATLAS_URI || "mongodb+srv://ivankoretskyy3:
 
 
 
------------------------------------------POSTGRESQL-------------------------------------------
+------------------------------------Mysql AWS---------------------------------
+https://us-east-1.console.aws.amazon.com/rds/home?region=us-east-1#database:id=hulu3;is-cluster=false
+https://us-east-1.console.aws.amazon.com/rds/home?region=us-east-1#
+u: gm2
+p: st
 
 aws
 username
