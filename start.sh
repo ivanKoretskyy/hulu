@@ -1,2 +1,2 @@
 export $(cat .env | xargs)
-./mvnw spring-boot:run
+./mvnw clean spring-boot:run
