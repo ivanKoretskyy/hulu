@@ -6,11 +6,13 @@
 + make two table movies and actors
 + make env variables so local changes go to local db
 + connect movies and actors
-- create simple react app to show movies
+
 + ADD DOCUMENTATION TO README FOR AMAZON MYSQL
+- create simple react app to show moviess
 - add authentication
 - add exception handling that will show that no such movie or no such actor
 - change list to set
+add image for movies
 
 --------------------------------------DEPLOYMENT----------------------------------
 
